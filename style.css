@@ -1,0 +1,358 @@
+/* @import url('https://fonts.googleapis.com/css?family=Lato'); */
+
+
+/*
+$color__background-body: #8d3131;
+$color__background-screen: #f1f1f1;
+$color__background-hr: #7f2222;
+$color__background-button: #7f2222;
+$color__background-pre: #6b1d1d;
+$color__background-ins: #6b1d1d;
+
+$color__text-screen: #21759b;
+$color__text-input: #fffaf0;
+$color__text-input-focus: #fde7b1;
+$color__link: #fbd982;
+$color__link-visited: #db9a28;
+$color__link-hover: #fde7b1;
+$color__text-main: #f8bca0;
+
+$color__border-button: #7f2222;
+$color__border-button-hover: #fde7b1;
+$color__border-button-focus: #6b1d1d;
+$color__border-input: #6b1d1d;
+$color__border-abbr: #6b1d1d; */
+
+
+/* LAYOUT */
+
+body {
+  font-size: 16px;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  color: #f8bca0;
+  background-color: #8d3131;
+}
+
+a {
+  color: #fbd982;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+a:visited {
+  color: #db9a28;
+}
+
+a:hover {
+  color: #fde7b1;
+}
+
+a:active {
+  color: #fde7b1;
+}
+
+p, h1, h2, h3, h4, h5, table {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  line-height: 1.5em;
+}
+
+
+/*  */
+
+#menu-toggle {
+  display: none;
+}
+
+#menu {
+  font-size: 1.2em;
+  background-color: rgba(127, 34, 34, 0.8);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  position: fixed;
+  z-index: 10;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+
+/* #menu li>a:not(:only-child)::after {
+	content: "\25BF";
+}
+
+#menu li>a:only-child::before {
+	content: "\25B9 \2002";
+} */
+
+#menu a {
+  text-decoration: none;
+  padding: 0.5em;
+  display: block;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+}
+
+#menu a:hover {
+  border-bottom: 2px solid #fbd982;
+}
+
+#menu ul {
+  padding: 0 2rem;
+  margin: 0;
+  list-style: none;
+  flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#menu li {
+  flex: 1;
+  margin: 0;
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 600px) {
+  #menu-toggle {
+    opacity: 0;
+    position: fixed;
+  }
+  #menu {
+    display: none;
+  }
+  #menu-toggle:checked~#menu {
+    display: block;
+  }
+  #menu-toggle:checked~#primary {
+    filter: blur(5px);
+  }
+  #menu-toggle:checked~.menu-btn::before {
+    transform: rotate(45deg);
+    background-color: #fbd982;
+    margin-bottom: -3px;
+    -webkit-box-shadow: 0 0 0 transparent;
+    box-shadow: 0 0 0 transparent;
+  }
+  #menu-toggle:checked~.menu-btn::after {
+    transform: rotate(-45deg);
+  }
+  .menu-btn {
+    top: 2rem;
+    right: 1rem;
+    position: absolute;
+    z-index: 100;
+    display: block;
+    padding: 1em;
+    width: 3rem;
+  }
+  .menu-btn::before, .menu-btn::after {
+    background-color: #fbd982;
+    content: '';
+    display: block;
+    height: 4px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  .menu-btn::before {
+    -webkit-box-shadow: 0 10px 0 #fbd982;
+    box-shadow: 0 10px 0 #fbd982;
+    margin-bottom: 16px;
+  }
+  #menu {
+    height: 100%;
+  }
+  #menu ul {
+    flex-flow: column;
+  }
+  #menu ul ul, #menu li {
+    width: 100%;
+  }
+}
+
+#menu #brand {
+  padding: 0;
+}
+
+#brand img {
+  height: 4em;
+  padding: 0;
+}
+
+
+/* MAIN BODY */
+
+#primary {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-top: 7rem;
+  transition: filter 0.3s ease;
+}
+
+.container {
+  margin: auto;
+  padding: 1rem 2rem;
+}
+
+#footer {
+  flex: 1;
+  margin: 0;
+  background-color: #842727;
+}
+
+@media screen and (min-width: 700px) {
+  #main {
+    /* -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 2rem;
+    -moz-column-gap: 2rem;
+    column-gap: 2rem; */
+  }
+  .container {
+    padding: 1rem 4rem;
+  }
+  .container > img {
+    float: right;
+    width: 50%;
+  }
+}
+
+table {
+  width: 100%;
+  /* border: 1px solid currentcolor; */
+  border-collapse: collapse;
+}
+
+table, tr, th {
+  transition: all 0.25s ease;
+}
+
+thead th {
+  font-weight: bold;
+  background-color: #6b1d1d;
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(127, 34, 34, 0.4);
+}
+
+tr:hover {
+  background-color: #7f2222;
+}
+
+th {
+  font-weight: normal;
+  /* border: 1px solid; */
+  padding: 0.3rem 0.5rem;
+}
+
+
+/* HERO HEADER */
+
+.lantern-header {
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  padding-bottom: 3rem;
+}
+
+.lattice {
+  position: relative;
+  height: 350px;
+  flex: 1;
+  transition: opacity, translate 0.3s ease-in;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-image: url('img/lattice_repeat.png');
+}
+
+.lattice:nth-child(1) {
+  background-position: right;
+}
+
+.lattice:nth-child(1)::before {
+  content: '';
+  position: absolute;
+  height: 250px;
+  width: 80px;
+  left: 5vw;
+  z-index: 1;
+  transition: 0.3s ease-in;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-image: url('img/lantern_1.png');
+}
+
+.lattice:nth-child(2) {
+  min-width: 571px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('img/lattice_mid.png');
+}
+
+.lattice:nth-child(3) {
+  background-position: left;
+}
+
+.lattice:nth-child(3)::before {
+  content: '';
+  position: absolute;
+  height: 250px;
+  width: 80px;
+  right: 5vw;
+  z-index: 1;
+  transition: 0.3s ease-in;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-image: url('img/lantern_1.png');
+}
+
+.lantern {
+  position: absolute;
+  height: 310px;
+  width: 100px;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, 0%);
+  z-index: 3;
+  transition: 0.6s ease-in;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-image: url('img/lantern_2.png');
+}
+
+@media screen and (max-width: 600px) {
+  .lattice {
+    height: 350px;
+  }
+  .lattice:nth-child(1)::before, .lattice:nth-child(3)::before {
+    opacity: 0;
+  }
+  .lattice:nth-child(2) {
+    min-width: 98%;
+  }
+  .lantern {
+    opacity: 0;
+  }
+}
