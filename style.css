@@ -408,6 +408,7 @@ th {
   }
   .lattice:nth-child(2) {
     background-repeat: repeat;
+    min-width: 100%;
   }
   .lantern {
     opacity: 0;
