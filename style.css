@@ -1,6 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css?family=Lato'); */
 
-
 /*
 $color__background-body: #8d3131;
 $color__background-screen: #f1f1f1;
@@ -22,7 +21,6 @@ $color__border-button-hover: #fde7b1;
 $color__border-button-focus: #6b1d1d;
 $color__border-input: #6b1d1d;
 $color__border-abbr: #6b1d1d; */
-
 
 /* LAYOUT */
 
@@ -59,6 +57,11 @@ p, h1, h2, h3, h4, h5, table {
   line-height: 1.5em;
 }
 
+img {
+  /* height: auto;
+  max-width: 100%; */
+  vertical-align: baseline;
+}
 
 /*  */
 
@@ -78,7 +81,6 @@ p, h1, h2, h3, h4, h5, table {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-
 
 /* #menu li>a:not(:only-child)::after {
 	content: "\25BF";
@@ -193,7 +195,6 @@ p, h1, h2, h3, h4, h5, table {
   padding: 0;
 }
 
-
 /* MAIN BODY */
 
 #primary {
@@ -207,6 +208,8 @@ p, h1, h2, h3, h4, h5, table {
 }
 
 .container {
+  width: 100%;
+  box-sizing: border-box;
   margin: auto;
   padding: 1rem 2rem;
 }
@@ -229,15 +232,21 @@ p, h1, h2, h3, h4, h5, table {
   .container {
     padding: 1rem 4rem;
   }
-  .container > img {
+  .container>img {
     float: right;
     width: 50%;
   }
 }
 
+.table-container {
+  overflow-x: auto;
+  min-width: 100%;
+}
+
 table {
-  width: 100%;
+  min-width: 100%;
   /* border: 1px solid currentcolor; */
+  overflow-x: scroll;
   border-collapse: collapse;
 }
 
@@ -245,9 +254,17 @@ table, tr, th {
   transition: all 0.25s ease;
 }
 
+table img {
+  min-width: 18vw;
+}
+
 thead th {
   font-weight: bold;
   background-color: #6b1d1d;
+}
+
+tbody {
+  text-align: left;
 }
 
 tr:nth-child(odd) {
@@ -263,7 +280,6 @@ th {
   /* border: 1px solid; */
   padding: 0.3rem 0.5rem;
 }
-
 
 /* HERO HEADER */
 
